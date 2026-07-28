@@ -1,0 +1,100 @@
+.shop-card{
+    background:var(--card);
+
+    border:1px solid var(--border);
+
+    border-radius:24px;
+
+    overflow:hidden;
+
+    transition:.3s;
+}
+
+.shop-card:hover{
+    transform:translateY(-8px);
+
+    border-color:var(--primary);
+}
+
+.shop-card img{
+    width:100%;
+    height:240px;
+
+    object-fit:contain;
+
+    padding:20px;
+
+    background:white;
+}
+
+.shop-card-content{
+    padding:1.5rem;
+}
+
+.shop-card-content h3{
+    margin:1rem 0;
+
+    font-size:1.1rem;
+
+    min-height:60px;
+}
+
+.shop-card .category{
+    color:#999;
+
+    text-transform:capitalize;
+
+    font-size:.9rem;
+}
+
+.rating{
+    color:var(--primary);
+
+    margin-bottom:1rem;
+}
+
+.shop-card h4{
+    font-size:1.5rem;
+
+    margin-bottom:1.5rem;
+}
+
+.shop-actions{
+    display:flex;
+
+    gap:1rem;
+}
+
+.shop-actions button{
+    flex:1;
+
+    padding:12px;
+
+    border:none;
+
+    border-radius:12px;
+
+    cursor:pointer;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    gap:8px;
+}
+
+.shop-actions button:first-child{
+    background:#1a1a1a;
+
+    color:white;
+}
+
+.shop-actions button:last-child{
+    background:var(--primary);
+
+    color:black;
+
+    font-weight:700;
+}

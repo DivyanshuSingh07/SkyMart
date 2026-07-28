@@ -1,0 +1,124 @@
+body.dark {
+    --bg: #090909;
+    --card: #111111;
+    --primary: #39ff14;
+    --secondary: #d9ff00;
+    --border: #2b2b2b;
+    --text: #ffffff;
+    --text-light: #a1a1aa;
+}
+
+body.light {
+    --bg: #f5f5f5;
+    --card: #ffffff;
+    --primary: #111111;
+    --secondary: #444444;
+    --border: #d4d4d4;
+    --text: #111111;
+    --text-light: #666666;
+}
+
+body.cyber {
+    --bg: #050010;
+    --card: #110028;
+    --primary: #00F5FF;
+    --secondary: #00C3FF;
+    --border: #222244;
+    --text: #ffffff;
+    --text-light: #9ca3af;
+}
+
+body.midnight {
+    --bg: #081229;
+    --card: #102040;
+    --primary: #4DA6FF;
+    --secondary: #80BFFF;
+    --border: #1E335C;
+    --text: #ffffff;
+    --text-light: #9ca3af;
+}
+
+body.royal {
+    --bg: #140022;
+    --card: #220038;
+    --primary: #B026FF;
+    --secondary: #D066FF;
+    --border: #3A005E;
+    --text: #ffffff;
+    --text-light: #c4b5fd;
+}
+
+body {
+    background: var(--bg);
+    color: var(--text);
+    transition: .3s ease;
+}
+
+
+
+/* theme.css */
+
+/* body.dark{
+    --bg:#090909;
+    --card:#111;
+    --primary:#39ff14;
+    --secondary:#d9ff00;
+    --border:#2b2b2b;
+    --text:#fff;
+    --text-light:#a1a1aa;
+}
+
+body.light{
+    --bg:#f5f5f5;
+    --card:white;
+    --primary:#111;
+    --secondary:#444;
+    --border:#ddd;
+    --text:#111;
+    --text-light:#666;
+}
+
+body.cyber{
+    --bg:#050010;
+    --card:#0e001c;
+    --primary:#00F5FF;
+    --secondary:#00C3FF;
+    --border:#1e1e3f;
+    --text:white;
+    --text-light:#9ca3af;
+} */
+
+/* body.dark{
+    --bg:#050505;
+    --card:#090909;
+    --text:white;
+    --primary:#C6FF00;
+}
+
+body.light{
+    --bg:white;
+    --card:#f5f5f5;
+    --text:#111;
+    --primary:black;
+}
+
+body.cyber{
+    --bg:#06001A;
+    --card:#110028;
+    --text:white;
+    --primary:#00F5FF;
+} */
+
+/* body.midnight{
+    --bg:#081229;
+    --card:#102040;
+    --text:white;
+    --primary:#4DA6FF;
+}
+
+body.royal{
+    --bg:#140022;
+    --card:#200038;
+    --text:white;
+    --primary:#B026FF;
+} */
