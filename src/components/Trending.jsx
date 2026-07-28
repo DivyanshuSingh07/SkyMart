@@ -42,36 +42,3 @@ export default function Trending() {
     );
 }
 
-
-// export default function Trending() {
-//   return (
-//     <section className="trending">
-
-//       <div className="trending-banner">
-
-//         <div className="trending-content">
-
-//           <p>Trending Collection</p>
-
-//           <h1>
-//             Gaming
-//             <br />
-//             Collection
-//           </h1>
-
-//           <span>
-//             Discover premium accessories and
-//             next-generation gaming gear.
-//           </span>
-
-//         </div>
-
-//         <button>
-//           Explore Collection
-//         </button>
-
-//       </div>
-
-//     </section>
-//   );
-// }

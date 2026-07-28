@@ -1,59 +1,133 @@
-import { createContext, useContext, useState } from "react";
+import {
+    createContext,
+    useContext,
+    useEffect,
+    useState
+} from "react";
+
 import toast from "react-hot-toast";
 
-const WishlistContext = createContext();
+import {
+    getCurrentUser,
+    getUsers,
+    saveUsers
+}
+from "../utils/localStorage";
 
-export function WishlistProvider({ children }) {
+const WishlistContext =
+    createContext();
 
-    const [wishlist, setWishlist] = useState([]);
+export function WishlistProvider({
+    children
+}) {
 
-    function addToWishlist(product) {
+    const currentUser =
+        getCurrentUser();
 
-        const exists = wishlist.find(
-            item => item.id === product.id
+    const [wishlist,
+        setWishlist] =
+        useState(
+            currentUser?.wishlist || []
         );
 
-        if (exists) return;
+    useEffect(() => {
+
+        if (!currentUser) return;
+
+        const users =
+            getUsers();
+
+        const updatedUsers =
+            users.map(user =>
+
+                user.id === currentUser.id
+
+                    ? {
+                        ...user,
+                        wishlist
+                    }
+
+                    : user
+            );
+
+        saveUsers(
+            updatedUsers
+        );
+
+    }, [wishlist]);
+
+    function addToWishlist(
+        product
+    ) {
+
+        const exists =
+            wishlist.find(
+                item =>
+                    item.id === product.id
+            );
+
+        if (exists) {
+
+            toast(
+                "Already in Wishlist"
+            );
+
+            return;
+        }
 
         setWishlist([
+
             ...wishlist,
+
             product
         ]);
 
         toast.success(
-    "Added to Wishlist"
-);
+            "Added to Wishlist"
+        );
     }
 
-    function removeFromWishlist(id) {
+    function removeFromWishlist(
+        id
+    ) {
 
         setWishlist(
+
             wishlist.filter(
-                item => item.id !== id
+                item =>
+                    item.id !== id
             )
         );
 
         toast.error(
-    "Removed from Wishlist"
-);
+            "Removed from Wishlist"
+        );
     }
 
     return (
 
         <WishlistContext.Provider
             value={{
+
                 wishlist,
+
                 addToWishlist,
+
                 removeFromWishlist
             }}
         >
+
             {children}
+
         </WishlistContext.Provider>
     );
 }
 
 export function useWishlist() {
+
     return useContext(
         WishlistContext
     );
 }
+
+

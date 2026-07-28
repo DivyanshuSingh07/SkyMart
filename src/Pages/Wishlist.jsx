@@ -1,4 +1,5 @@
 import Navbar from "../components/Navbar";
+import Footer from "../components/Footer";
 
 import { useNavigate } from "react-router";
 
@@ -156,95 +157,8 @@ export default function Wishlist() {
                     )}
 
             </section>
+
+            <Footer />
         </>
     );
 }
-
-
-
-// import Navbar from "../components/Navbar";
-
-// import {
-//     useWishlist
-// }
-// from "../Context/WishlistContext";
-
-// import {
-//     useCart
-// }
-// from "../Context/CartContext";
-
-// export default function Wishlist() {
-
-//     const {
-//         wishlist,
-//         removeFromWishlist
-//     } = useWishlist();
-
-//     const {
-//         addToCart
-//     } = useCart();
-
-//     return (
-
-//         <>
-//             <Navbar />
-
-//             <section className="wishlist-page">
-
-//                 <h1>
-//                     Wishlist
-//                 </h1>
-
-//                 {
-//                     wishlist.map(
-//                         item => (
-
-//                             <div
-//                                 className="wishlist-item"
-//                                 key={item.id}
-//                             >
-
-//                                 <img
-//                                     src={item.image}
-//                                 />
-
-//                                 <div>
-
-//                                     <h3>
-//                                         {item.title}
-//                                     </h3>
-
-//                                     <p>
-//                                         ${item.price}
-//                                     </p>
-
-//                                 </div>
-
-//                                 <button
-//                                     onClick={() =>
-//                                         addToCart(item)
-//                                     }
-//                                 >
-//                                     Add To Cart
-//                                 </button>
-
-//                                 <button
-//                                     onClick={() =>
-//                                         removeFromWishlist(
-//                                             item.id
-//                                         )
-//                                     }
-//                                 >
-//                                     Remove
-//                                 </button>
-
-//                             </div>
-//                         )
-//                     )
-//                 }
-
-//             </section>
-//         </>
-//     );
-// }

@@ -74,6 +74,7 @@ if (loading) {
 
             {/* <SearchBar /> */}
 
+            <div id="products">
             <ProductGrid
                 title="Top Rated"
                 products={products}
@@ -83,7 +84,7 @@ if (loading) {
                 title="New Arrivals"
                 products={[...products].reverse()}
             />
-
+            </div>
             <Features />
 
             <Newsletter />

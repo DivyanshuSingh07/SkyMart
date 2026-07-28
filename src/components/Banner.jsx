@@ -36,28 +36,3 @@ export default function Banner() {
         </section>
     );
 }
-
-
-// export default function Banner() {
-//     return (
-//         <section className="banner">
-
-//             <div>
-
-//                 <h2>
-//                     SUMMER SALE 2026
-//                 </h2>
-
-//                 <p>
-//                     Get up to 50% off on selected products.
-//                 </p>
-
-//             </div>
-
-//             <button>
-//                 Explore Deals
-//             </button>
-
-//         </section>
-//     );
-// }

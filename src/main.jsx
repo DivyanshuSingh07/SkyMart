@@ -16,6 +16,7 @@ import "./styles/about.css";
 import "./styles/home.css";
 import "./styles/shopCard.css";
 import "./styles/shopGrid.css";
+import "./styles/footer.css";
 
 import { AuthProvider } from "./Context/AuthContext.jsx";
 
