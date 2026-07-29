@@ -50,7 +50,9 @@ export default function ProductGrid({ title, products }) {
           </div>
         </div>
 
-        <span>View All →</span>
+        <button className="pd-btn primary" onClick={() => navigate("/shop")}>
+            View All →
+          </button>
       </div>
 
       <div className="product-grid">

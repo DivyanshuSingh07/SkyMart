@@ -8,84 +8,45 @@ import ProductDetails from "./Pages/ProductDetails.jsx";
 import Checkout from "./Pages/Checkout.jsx";
 import Shop from "./Pages/Shop";
 import About from "./Pages/About";
+import Profile from "./Pages/Profile.jsx";
 
-import "./styles/cartDrawer.css"
+import "./styles/cartDrawer.css";
 
-import CartDrawer
-from "./components/CartDrawer";
+import CartDrawer from "./components/CartDrawer";
 
-import {
-    useAuth
-} from "./Context/AuthContext.jsx";
+import { useAuth } from "./Context/AuthContext.jsx";
 
 export default function App() {
+  const { user } = useAuth();
 
-    const { user } =
-        useAuth();
+  return (
+    <>
+      <CartDrawer />
+      <Routes>
+        <Route path="/" element={<Auth />} />
 
-    return (
-        <>
-        <CartDrawer />
-        <Routes>
+        <Route
+          path="/home"
+          element={user ? <Home /> : <Navigate to="/" replace />}
+        />
 
-            <Route
-                path="/"
-                element={<Auth />}
-            />
+        <Route
+          path="/products/:id"
+          element={user ? <ProductDetails /> : <Navigate to="/" replace />}
+        />
 
-            <Route
-                path="/home"
-                element={
-                    user
-                        ? <Home />
-                        : (
-                            <Navigate
-                                to="/"
-                                replace
-                            />
-                        )
-                }
-            />
+        <Route path="/cart" element={user ? <Cart /> : <Navigate to="/" />} />
 
-            <Route
-                path="/products/:id"
-                element={
-                    user
-                        ? <ProductDetails />
-                        : <Navigate to="/" replace />
-                }
-            />
+        <Route path="/wishlist" element={<Wishlist />} />
 
-            <Route
-            path="/cart"
-            element={
-                user
-                ? <Cart />
-                : <Navigate to="/" />
-            }
-            />
+        <Route path="/checkout" element={<Checkout />} />
 
-            <Route
-                path="/wishlist"
-                element={<Wishlist />}
-            />
+        <Route path="/shop" element={<Shop />} />
 
-            <Route
-                path="/checkout"
-                element={<Checkout />}
-            />
+        <Route path="/about" element={<About />} />
 
-            <Route
-                path="/shop"
-                element={<Shop />}
-            />
-
-            <Route
-                path="/about"
-                element={<About />}
-            />
-
-        </Routes>
-        </>
-    );
+        <Route path="/profile" element={<Profile />} />
+      </Routes>
+    </>
+  );
 }

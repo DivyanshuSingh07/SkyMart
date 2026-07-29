@@ -95,16 +95,40 @@ body{
     border-radius:18px;
 }
 
+.profile{
+    cursor:pointer;
+    transition:.3s;
+}
+
+.profile:hover{
+    border-color:
+    var(--primary);
+
+    transform:
+    translateY(-2px);
+}
 .avatar{
-    width:35px;
-    height:35px;
-    border-radius:10px;
-    background:var(--primary);
-    color:black;
+    width:40px;
+    height:40px;
+
+    border-radius:12px;
+
+    overflow:hidden;
+
     display:flex;
     justify-content:center;
     align-items:center;
-    font-weight:700;
+
+    background:var(--primary);
+
+    color:black;
+}
+
+.avatar img{
+    width:100%;
+    height:100%;
+
+    object-fit:cover;
 }
 
 .nav-actions > button{
